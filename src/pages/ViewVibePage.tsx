@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Reward from "react-rewards";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { CircleCountDown } from "./components/CircleCountDown";
 import { VideoPlayer } from "./components/VideoPlayer";
 
 const FullSizePlayer = styled.div`
@@ -106,7 +107,11 @@ const EmojiSelectorComponent = () => {
           🤔
         </ReactionEmoji>
       </EmojiWrapper>
-      <Reward ref={rewardRef} config={{ emoji: [emojiConfetti], angle:120, spread: 200 }} type="emoji">
+      <Reward
+        ref={rewardRef}
+        config={{ emoji: [emojiConfetti], angle: 120, spread: 200 }}
+        type="emoji"
+      >
         <ConfettiPseudo />
       </Reward>
     </EmojiSelector>
@@ -115,6 +120,8 @@ const EmojiSelectorComponent = () => {
 
 export const ViewVibePage = () => {
   const [source, setSource] = useState<string>();
+  const [duration, setDuration] = useState<number | null>(null);
+  const [playing, setPlaying] = useState<boolean>(false);
   const history = useHistory();
   useEffect(() => {
     setSource("/assets/example_vibe.mp4");
@@ -123,6 +130,8 @@ export const ViewVibePage = () => {
   const onFinished = () => {
     history.push("/share");
   };
+
+  console.log('Duration', duration)
 
   return (
     <>
@@ -133,10 +142,13 @@ export const ViewVibePage = () => {
             controls={true}
             sources={[{ type: "video/mp4", src: source }]}
             onFinished={onFinished}
+            onDurationLoaded={(duration) => setDuration(duration)}
+            onPlayStarted={() => setPlaying(true)}
           />
         )}
       </FullSizePlayer>
       <EmojiSelectorComponent />
+      {duration && <CircleCountDown isPlaying={playing} duration={duration} />}
     </>
   );
 };

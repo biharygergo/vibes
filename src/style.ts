@@ -18,12 +18,12 @@ export const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 10px 10px;
+  padding: 0px 10px;
   justify-content: space-between;
 `;
 
 export const Header = styled.div`
-  padding-top: 20px;
+  padding-top: 5px;
   z-index: 99;
   flex: 1;
 `;

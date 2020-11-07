@@ -9,6 +9,8 @@ export interface VideoPlayerProps {
     type: "video/mp4";
   }[];
   onFinished: () => void;
+  onDurationLoaded: (duration: number) => void;
+  onPlayStarted: () => void;
 }
 
 export const VideoPlayer = (props: VideoPlayerProps) => {
@@ -28,19 +30,30 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
 
       _player.on("ended", props.onFinished);
 
+      _player.on("loadedmetadata", (_event) => {
+        console.log(_player.duration());
+        props.onDurationLoaded(_player.duration());
+      });
+
+      _player.on("play", () => props.onPlayStarted());
+
       setPlayer(_player);
     }
 
     return () => {
       if (player) {
-        player.dispose();
+        // player.dispose();
       }
     };
   }, [props, player]);
 
   return (
     <div data-vjs-player>
-      <video ref={videoNode} className="video-js vjs-fluid vjs-fill" playsInline></video>
+      <video
+        ref={videoNode}
+        className="video-js vjs-fluid vjs-fill"
+        playsInline
+      ></video>
     </div>
   );
 };
