@@ -73,8 +73,8 @@ class Timer extends Component<any, any> {
     const defaultText = this.props.defaultText || "0:00";
     return (
       <Text {...this.props}>
-        <RecIcon />
-        {this.state.human || defaultText}
+{/*         <RecIcon />
+ */}        {this.state.human || defaultText}
       </Text>
     );
   }

@@ -1,7 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { Button, Content, Header, HeaderTitle, PageLayout } from "../style";
+import {
+  Button,
+  Content,
+  Footer,
+  Header,
+  HeaderTitle,
+  PageLayout,
+} from "../style";
 
 const PictureWrapper = styled.div`
   position: relative;
@@ -75,10 +82,12 @@ export const ShareVibePage = () => {
         <DescriptionText>
           Your classmate Peter is feeling anxious and has 3 deadlines this week.
         </DescriptionText>
+      </Content>
+      <Footer>
         <Button onClick={() => history.push("/share/select")}>
           Send a good Vibe
         </Button>
-      </Content>
+      </Footer>
     </PageLayout>
   );
 };

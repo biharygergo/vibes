@@ -106,7 +106,7 @@ const EmojiSelectorComponent = () => {
           🤔
         </ReactionEmoji>
       </EmojiWrapper>
-      <Reward ref={rewardRef} config={{ emoji: [emojiConfetti] }} type="emoji">
+      <Reward ref={rewardRef} config={{ emoji: [emojiConfetti], angle:120, spread: 200 }} type="emoji">
         <ConfettiPseudo />
       </Reward>
     </EmojiSelector>

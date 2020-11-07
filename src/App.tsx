@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import {
   FeelingNowPage,
@@ -15,17 +20,17 @@ import {
 import { theme } from "./style";
 
 const GlobalStyle = createGlobalStyle`
-  html, body {
-    height: 100%;
+  html, body, #root {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 100%;
+    overflow: hidden;
   }
 `;
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ height: "100%" }}>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Router>
@@ -56,6 +61,9 @@ function App() {
             </Route>
             <Route path="/share">
               <ShareVibePage />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/now" />
             </Route>
           </Switch>
         </Router>

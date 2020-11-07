@@ -8,7 +8,11 @@ const SelectorCardWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+
+  :first-child {
+    margin-top: 10px;
+  }
 `;
 
 const SelectorCard = styled.div<{ selected?: boolean }>`

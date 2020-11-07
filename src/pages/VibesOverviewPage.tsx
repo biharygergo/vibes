@@ -43,7 +43,7 @@ const WordCloudWrapper = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 500px;
+  height: 50vh;
   overflow: hidden;
   transform: scale(1.8);
 `;
@@ -51,7 +51,7 @@ const WordCloudWrapper = styled.div`
 const NoOverflowDiv = styled.div`
   overflow: hidden;
   max-width: 100vw;
-  height: 700px;
+  height: 70vh;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -68,7 +68,7 @@ export const VibesOverviewPage = () => {
           <WordCloudWrapper>
             <ReactWordcloud
               words={generateEmojis()}
-              size={[window.innerWidth, 500]}
+              size={[window.innerWidth, window.innerHeight * 0.5]}
             />
           </WordCloudWrapper>
         </NoOverflowDiv>

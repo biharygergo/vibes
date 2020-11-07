@@ -1,13 +1,20 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { PageLayout, Header, HeaderTitle, Content, Button } from "../style";
+import {
+  PageLayout,
+  Header,
+  HeaderTitle,
+  Content,
+  Button,
+  Footer,
+} from "../style";
 
 const PlaneWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
+  padding: 40px 0;
 `;
 
 const PlaneEmoji = styled.span`
@@ -37,8 +44,10 @@ export const RecordSuccessPage = () => {
           <PlaneEmoji>✈️</PlaneEmoji>
         </PlaneWrapper>
         <DescriptionText>Your Vibe is on its way to Peter.</DescriptionText>
-        <Button onClick={onNext}>Close</Button>
       </Content>
+      <Footer>
+        <Button onClick={onNext}>Close</Button>
+      </Footer>
     </PageLayout>
   );
 };

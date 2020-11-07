@@ -1,7 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { PageLayout, Header, HeaderTitle, Content, Button } from "../style";
+import {
+  PageLayout,
+  Header,
+  HeaderTitle,
+  Content,
+  Button,
+  Footer,
+} from "../style";
 import { emojiLookup, EmojiSelector } from "./FeelingNowPage";
 
 const emojisToShow = [
@@ -33,8 +40,10 @@ export const ShareVibeSelectPage = () => {
         <DescriptionText>
           Select the perfect Vibe to cheer up Peter!
         </DescriptionText>
-        <Button onClick={onNext}>Next</Button>
       </Content>
+      <Footer>
+        <Button onClick={onNext}>Next</Button>
+      </Footer>
     </PageLayout>
   );
 };

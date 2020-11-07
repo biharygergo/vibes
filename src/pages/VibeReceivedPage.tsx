@@ -2,7 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import Reward from "react-rewards";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { PageLayout, Header, HeaderTitle, Content, Button } from "../style";
+import {
+  PageLayout,
+  Header,
+  HeaderTitle,
+  Content,
+  Button,
+  Footer,
+} from "../style";
 import { emojiLookup } from "./FeelingNowPage";
 
 const EmojiWrapper = styled.div`
@@ -63,8 +70,10 @@ export const VibeReceivedPage = () => {
             <Emoji onClick={throwConfetti}>{vibe.vibe}</Emoji>
           </Reward>
         </EmojiWrapper>
-        <Button onClick={viewVibe}>View Vibe</Button>
       </Content>
+      <Footer>
+        <Button onClick={viewVibe}>View Vibe</Button>
+      </Footer>
     </PageLayout>
   );
 };

@@ -10,29 +10,38 @@ export const theme = {
   textOnPrimary: "",
   textOnSecondary: "",
   background: "#FFFFFF",
-  boxShadow: "0 -10px 100px 20px #F4F4F7",
+  boxShadow: "rgba(21, 34, 53, 0.1) 0px 6px 18px 0px",
   emojiShadow: "-6px 10px 15px rgba(224,151,17,0.40)",
 };
 
 export const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   padding: 10px 10px;
+  justify-content: space-between;
 `;
 
 export const Header = styled.div`
-  padding-top: 30px;
+  padding-top: 20px;
   z-index: 99;
+  flex: 1;
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+    flex: 4;
+    min-height: 0;
+    overflow-y: auto;
+    padding-bottom: 10px;
+`;
 
-export const Footer = styled.div``;
+export const Footer = styled.div`
+    flex: 1;
+`;
 
 export const HeaderTitle = styled.h1`
   color: ${(props) => props.theme.text};
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   z-index: 99;
 `;
 
