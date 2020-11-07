@@ -46,6 +46,25 @@ const OverlayButton = styled.button`
   }
 `;
 
+const RecordHelpTextWrapper = styled.div`
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+`;
+
+const RecordHelpText = styled.div`
+  border-radius: 25px;
+  background: white;
+  color: #252b35;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 69%;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: ${(props) => props.theme.boxShadow};
+`;
+
 const Actions = ({
   isVideoInputSupported,
   isInlineRecordingSupported,
@@ -114,28 +133,42 @@ const Actions = ({
 
     if (isCameraOn && streamIsReady) {
       return (
-        <RecordButton
-          type="button"
-          onClick={onStartRecording}
-          data-qa="start-recording"
-        />
+        <>
+          <RecordButton
+            type="button"
+            onClick={onStartRecording}
+            data-qa="start-recording"
+          />
+        </>
       );
     }
 
     if (useVideoInput) {
       return (
-        <OverlayButton type="button" onClick={onOpenVideoInput} data-qa="open-input">
+        <OverlayButton
+          type="button"
+          onClick={onOpenVideoInput}
+          data-qa="open-input"
+        >
           Upload a video
         </OverlayButton>
       );
     }
 
     return shouldUseVideoInput ? (
-      <OverlayButton type="button" onClick={onOpenVideoInput} data-qa="open-input">
+      <OverlayButton
+        type="button"
+        onClick={onOpenVideoInput}
+        data-qa="open-input"
+      >
         Record a video
       </OverlayButton>
     ) : (
-      <OverlayButton type="button" onClick={onTurnOnCamera} data-qa="turn-on-camera">
+      <OverlayButton
+        type="button"
+        onClick={onTurnOnCamera}
+        data-qa="turn-on-camera"
+      >
         Turn my camera ON
       </OverlayButton>
     );
@@ -143,6 +176,11 @@ const Actions = ({
 
   return (
     <div>
+      {isCameraOn && streamIsReady && !isRecording && !isReplayingVideo && (
+        <RecordHelpTextWrapper>
+          <RecordHelpText>How do you relax after studying?</RecordHelpText>
+        </RecordHelpTextWrapper>
+      )}
       {isRecording && <Timer timeLimit={timeLimit} defaultText="0:00" />}
       {isRunningCountdown && <Countdown countdownTime={countdownTime} />}
       <ActionsWrapper>{renderContent()}</ActionsWrapper>

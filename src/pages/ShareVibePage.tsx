@@ -70,6 +70,8 @@ const DescriptionText = styled.p`
 export const ShareVibePage = () => {
   const history = useHistory();
 
+  const offsetX = window.innerWidth / 2 - 200;
+
   return (
     <PageLayout>
       <Header>
@@ -82,7 +84,7 @@ export const ShareVibePage = () => {
           </PictureDiv>
           <FloatingEmoji
             size={2}
-            offsetX={50}
+            offsetX={offsetX + 50}
             offsetY={50}
             random={Math.random()}
           >
@@ -90,7 +92,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={3}
-            offsetX={270}
+            offsetX={offsetX + 270}
             offsetY={80}
             random={Math.random()}
           >
@@ -98,7 +100,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={1}
-            offsetX={70}
+            offsetX={offsetX + 70}
             offsetY={200}
             random={Math.random()}
           >
@@ -106,7 +108,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={2}
-            offsetX={300}
+            offsetX={offsetX + 300}
             offsetY={150}
             random={Math.random()}
           >
@@ -114,7 +116,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={3}
-            offsetX={40}
+            offsetX={offsetX + 40}
             offsetY={220}
             random={Math.random()}
           >

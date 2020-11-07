@@ -1,30 +1,10 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { theme } from "../style";
+import { Content, Header, HeaderTitle, PageLayout, theme } from "../style";
 import GradientAreaChart, { AreaChartProps } from "./components/AreaChart";
 import EmojiBarChart, { EmojiBarChartProps } from "./components/EmojiBarChart";
 import { emojiLookup } from "./FeelingNowPage";
-
-const PageLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 10px 10px;
-`;
-
-const Header = styled.div`
-  padding-top: 30px;
-  z-index: 99;
-`;
-
-const Content = styled.div``;
-
-const HeaderTitle = styled.h1`
-  color: ${(props) => props.theme.text};
-  margin-bottom: 40px;
-  z-index: 99;
-`;
 
 const ChartTitle = styled.h5`
   color: ${(props) => props.theme.text};
@@ -34,6 +14,9 @@ const ChartTitle = styled.h5`
 const ChartCard = styled.div`
   border-radius: 25px;
   box-shadow: ${(props) => props.theme.boxShadow};
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 const ChartCardInner = styled.div`
