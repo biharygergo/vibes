@@ -5,6 +5,8 @@ import {
   FeelingNowPage,
   LoadChartPage,
   RecordVibePage,
+  ShareVibePage,
+  ShareVibeSelectPage,
   VibeReceivedPage,
   VibesOverviewPage,
   ViewVibePage,
@@ -43,6 +45,12 @@ function App() {
             </Route>
             <Route path="/all">
               <VibesOverviewPage />
+            </Route>
+            <Route path="/share/select">
+              <ShareVibeSelectPage />
+            </Route>
+            <Route path="/share">
+              <ShareVibePage />
             </Route>
           </Switch>
         </Router>

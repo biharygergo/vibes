@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Reward from "react-rewards";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { PageLayout, Header, HeaderTitle, Content, Button } from "../style";
 import { emojiLookup } from "./FeelingNowPage";
@@ -29,6 +30,7 @@ export const VibeReceivedPage = () => {
   });
 
   let reward = useRef(null);
+  const history = useHistory();
 
   useEffect(() => {
     throwConfetti();
@@ -38,6 +40,10 @@ export const VibeReceivedPage = () => {
     if (reward && reward.current) {
       (reward as any).current.rewardMe();
     }
+  };
+
+  const viewVibe = () => {
+    history.push("/view");
   };
 
   return (
@@ -57,7 +63,7 @@ export const VibeReceivedPage = () => {
             <Emoji onClick={throwConfetti}>{vibe.vibe}</Emoji>
           </Reward>
         </EmojiWrapper>
-        <Button>View vibe</Button>
+        <Button onClick={viewVibe}>View Vibe</Button>
       </Content>
     </PageLayout>
   );

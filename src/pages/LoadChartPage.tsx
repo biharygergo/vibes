@@ -86,8 +86,8 @@ const mockVibeData: VibeData[] = [
   },
   {
     time: "sat",
-    label: emojiLookup.Explosive.emoji,
-    value: emojiLookup.Explosive.value,
+    label: emojiLookup.Breakdown.emoji,
+    value: emojiLookup.Breakdown.value,
   },
   {
     time: "sun",

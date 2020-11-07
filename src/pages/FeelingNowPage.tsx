@@ -100,23 +100,63 @@ const EmojiText = styled.span`
   font-weight: bold;
 `;
 
+export interface Emoji {
+  emoji: string;
+  label: string;
+  value: number;
+}
+
 export const emojiLookup = {
   Awesome: { emoji: "🤩", label: "Awesome", value: 5 },
   Crazy: { emoji: "🤪", label: "Crazy", value: 3 },
   Sick: { emoji: "🤒", label: "Sick", value: 2 },
-  Explosive: { emoji: "🤯", label: "Explosive", value: 1 },
+  Breakdown: { emoji: "🤯", label: "Breakdown", value: 1 },
+  Party: { emoji: "🥳", label: "Go Crazy", value: 5 },
+  FeelTheLove: { emoji: "😍", label: "Feel the Love", value: 5 },
+  ActSmart: { emoji: "🤓", label: "Act Smart", value: 4 },
+  Anxious: { emoji: "😰", label: "Anxious", value: 2 },
+  Alright: { emoji: "😊", label: "Alright", value: 2 },
+};
+
+const emojisToShow = [
+  emojiLookup.Awesome,
+  emojiLookup.Alright,
+  emojiLookup.Anxious,
+  emojiLookup.Breakdown,
+];
+export interface EmojiSelectorProps {
+  emojis: Emoji[];
+  onSelected: (emoji: Emoji) => void;
+}
+
+export const EmojiSelector = (props: EmojiSelectorProps) => {
+  const [selectedEmoji, setSelectedEmoji] = useState<number>();
+  const { emojis, onSelected } = props;
+  return (
+    <>
+      {emojis.map((item, index) => (
+        <SelectorCardWrapper key={item.label}>
+          <SelectorCard
+            selected={selectedEmoji === index}
+            onClick={() => {
+              setSelectedEmoji(index);
+              onSelected(item);
+            }}
+          >
+            <SelectorCardInner>
+              <Emoji>{item.emoji}</Emoji>
+              <EmojiText>{item.label}</EmojiText>
+            </SelectorCardInner>
+          </SelectorCard>
+        </SelectorCardWrapper>
+      ))}
+    </>
+  );
 };
 
 export const FeelingNowPage = () => {
-  const [selectedEmoji, setSelectedEmoji] = useState<number>();
   const history = useHistory();
-
-  const emojis = [
-    { emoji: "🤩", label: "Awesome" },
-    { emoji: "🤪", label: "Crazy" },
-    { emoji: "🤒", label: "Sick" },
-    { emoji: "🤯", label: "Explosive" },
-  ];
+  const [selectedEmoji, setSelectedEmoji] = useState<number>();
 
   const onNextClick = () => {
     history.push(`/history?lastFeelingId=${selectedEmoji || ""}`);
@@ -131,19 +171,10 @@ export const FeelingNowPage = () => {
         </HeaderTitle>
       </Header>
       <Selector>
-        {emojis.map((item, index) => (
-          <SelectorCardWrapper key={item.label}>
-            <SelectorCard
-              selected={selectedEmoji === index}
-              onClick={() => setSelectedEmoji(index)}
-            >
-              <SelectorCardInner>
-                <Emoji>{item.emoji}</Emoji>
-                <EmojiText>{item.label}</EmojiText>
-              </SelectorCardInner>
-            </SelectorCard>
-          </SelectorCardWrapper>
-        ))}
+        <EmojiSelector
+          emojis={emojisToShow}
+          onSelected={(emoji) => setSelectedEmoji(emoji.value)}
+        />
 
         <DetailsBlock>
           We noticed 2 upcoming deadlines for your courses.
