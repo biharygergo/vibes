@@ -1,33 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-
-const PageLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 10px 10px;
-`;
-
-const Header = styled.div`
-  flex: 1;
-  padding-top: 30px;
-  z-index: 99;
-`;
-
-const Selector = styled.div`
-  flex: 2;
-`;
-
-const Footer = styled.div`
-  flex: 1;
-`;
-
-const HeaderTitle = styled.h1`
-  color: ${(props) => props.theme.text};
-  margin-bottom: 40px;
-  z-index: 99;
-`;
+import { PageLayout, Header, HeaderTitle, Content, Footer } from "../style";
 
 const SelectorCardWrapper = styled.div`
   width: 50%;
@@ -170,7 +144,7 @@ export const FeelingNowPage = () => {
           vibe?
         </HeaderTitle>
       </Header>
-      <Selector>
+      <Content>
         <EmojiSelector
           emojis={emojisToShow}
           onSelected={(emoji) => setSelectedEmoji(emoji.value)}
@@ -179,7 +153,7 @@ export const FeelingNowPage = () => {
         <DetailsBlock>
           We noticed 2 upcoming deadlines for your courses.
         </DetailsBlock>
-      </Selector>
+      </Content>
       <Footer>
         <Button onClick={onNextClick}>Next</Button>
       </Footer>

@@ -6,3 +6,4 @@ export * from "./VibesOverviewPage";
 export * from "./ViewVibePage";
 export * from "./ShareVibePage";
 export * from "./ShareVibeSelectPage";
+export * from "./RecordSuccessPage";

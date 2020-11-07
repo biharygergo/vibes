@@ -4,6 +4,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import {
   FeelingNowPage,
   LoadChartPage,
+  RecordSuccessPage,
   RecordVibePage,
   ShareVibePage,
   ShareVibeSelectPage,
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
     min-height: 100vh;
   }
 `;
@@ -33,6 +35,9 @@ function App() {
             </Route>
             <Route path="/history">
               <LoadChartPage />
+            </Route>
+            <Route path="/record/success">
+              <RecordSuccessPage />
             </Route>
             <Route path="/record">
               <RecordVibePage />

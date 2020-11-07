@@ -17,23 +17,18 @@ export const theme = {
 export const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   padding: 10px 10px;
 `;
 
 export const Header = styled.div`
-  flex: 1;
   padding-top: 30px;
   z-index: 99;
 `;
 
-export const Content = styled.div`
-  flex: 2;
-`;
+export const Content = styled.div``;
 
-export const Footer = styled.div`
-  flex: 1;
-`;
+export const Footer = styled.div``;
 
 export const HeaderTitle = styled.h1`
   color: ${(props) => props.theme.text};
