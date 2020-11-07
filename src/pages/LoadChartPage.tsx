@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { theme } from "../style";
 import GradientAreaChart, { AreaChartProps } from "./components/AreaChart";
@@ -105,10 +106,19 @@ const mockEmojiData: EmojiBarChartProps<VibeData> = {
 };
 
 export const LoadChartPage = () => {
+  const history = useHistory();
+  useEffect(() => {
+    setTimeout(() => {
+      history.push("/received");
+    }, 10000);
+  }, [history]);
   return (
     <PageLayout>
       <Header>
-        <HeaderTitle>Your vibes<br /> and workload</HeaderTitle>
+        <HeaderTitle>
+          Your vibes
+          <br /> and workload
+        </HeaderTitle>
       </Header>
       <Content>
         <ChartTitle>Workload</ChartTitle>
