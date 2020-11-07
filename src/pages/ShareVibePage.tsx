@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import {
   Button,
   Content,
@@ -32,16 +32,33 @@ const Picture = styled.img`
   height: 100%;
 `;
 
+const pulse = (random: number) => keyframes`
+    0% {
+        transform : scale(1 + ${random * 0.5});
+    }
+    50% {
+        transform : scale(1.1)  translateY(calc(${
+          random * 5
+        }px)) translateY(calc(${random * 5}px));
+    }
+    100% {
+        transform : scale(1);
+    }
+`;
+
 const FloatingEmoji = styled.span<{
   size: number;
   offsetX: number;
   offsetY: number;
+  random: number;
 }>`
   position: absolute;
   top: ${(props) => props.offsetY}px;
   left: ${(props) => props.offsetX}px;
   font-size: ${(props) => props.size}rem;
   text-shadow: ${(props) => props.theme.emojiShadow};
+  animation: ${(props) => pulse(props.random * props.random > 0.5 ? -1 : 1)}
+    ${(props) => props.random * 10 + 3}s ease-in-out infinite;
 `;
 
 const DescriptionText = styled.p`
@@ -63,19 +80,44 @@ export const ShareVibePage = () => {
           <PictureDiv>
             <Picture src="/assets/profile_image.png" alt="Profile of sender" />
           </PictureDiv>
-          <FloatingEmoji size={2} offsetX={50} offsetY={50}>
+          <FloatingEmoji
+            size={2}
+            offsetX={50}
+            offsetY={50}
+            random={Math.random()}
+          >
             😕
           </FloatingEmoji>
-          <FloatingEmoji size={3} offsetX={270} offsetY={80}>
+          <FloatingEmoji
+            size={3}
+            offsetX={270}
+            offsetY={80}
+            random={Math.random()}
+          >
             😔
           </FloatingEmoji>
-          <FloatingEmoji size={1} offsetX={70} offsetY={200}>
+          <FloatingEmoji
+            size={1}
+            offsetX={70}
+            offsetY={200}
+            random={Math.random()}
+          >
             🥴
           </FloatingEmoji>
-          <FloatingEmoji size={2} offsetX={300} offsetY={150}>
+          <FloatingEmoji
+            size={2}
+            offsetX={300}
+            offsetY={150}
+            random={Math.random()}
+          >
             🤯
           </FloatingEmoji>
-          <FloatingEmoji size={3} offsetX={40} offsetY={220}>
+          <FloatingEmoji
+            size={3}
+            offsetX={40}
+            offsetY={220}
+            random={Math.random()}
+          >
             🙃
           </FloatingEmoji>
         </PictureWrapper>

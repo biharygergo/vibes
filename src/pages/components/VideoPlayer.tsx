@@ -40,7 +40,7 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
 
   return (
     <div data-vjs-player>
-      <video ref={videoNode} className="video-js vjs-fluid vjs-fill"></video>
+      <video ref={videoNode} className="video-js vjs-fluid vjs-fill" playsInline></video>
     </div>
   );
 };

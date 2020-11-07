@@ -29,14 +29,16 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-    flex: 4;
-    min-height: 0;
-    overflow-y: auto;
-    padding-bottom: 10px;
+  flex: 4;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 10px;
 `;
 
 export const Footer = styled.div`
-    flex: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
 `;
 
 export const HeaderTitle = styled.h1`
