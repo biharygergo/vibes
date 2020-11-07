@@ -114,7 +114,7 @@ const Actions = ({
           >
             Re-record
           </OverlayButton> */}
-          <Button type="button" onClick={onSend}>
+          <Button type="button" onClick={onSend} style={{ width: "90vw" }}>
             Send Vibe
           </Button>
         </div>

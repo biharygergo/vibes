@@ -57,13 +57,35 @@ const NoOverflowDiv = styled.div`
   left: 0;
   right: 0;
 `;
+
+const AaltoLogo = styled.img`
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto;
+  margin-top: -10px;
+`;
+
+const VibeText = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content; center;
+    flex-direction: column;
+    padding-top: 40px;
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+`;
 export const VibesOverviewPage = () => {
   return (
     <PageLayout>
-      <Header>
-        <HeaderTitle>See the current Vibe at Aalto</HeaderTitle>
-      </Header>
       <Content>
+        <VibeText>
+          <HeaderTitle>Current vibes <br />at</HeaderTitle>
+          <AaltoLogo src="/assets/aalto.png" />
+        </VibeText>
         <NoOverflowDiv>
           <WordCloudWrapper>
             <ReactWordcloud

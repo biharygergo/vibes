@@ -19,7 +19,7 @@ const FullSizePlayer = styled.div`
     height: 100%;
 
     .vjs-big-play-button {
-      top: 50%;
+      top: 40%;
       left: calc(50vw - 1.5em);
       background: white;
       color: black;
