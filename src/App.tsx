@@ -31,7 +31,8 @@ const GlobalStyle = createGlobalStyle`
     @media only screen and (min-width: 768px) {
       #root {
         width: 400px;
-        height: 800px;
+        height: 80vh;
+        max-height: 800px;
         border: 2px solid #d3d3d3;
         border-radius: 30px;
         padding: 10px;
