@@ -126,10 +126,12 @@ export const ViewVibePage = () => {
   const sources = [
     "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2FVID_20201108_010105.mp4?alt=media&token=1f83360c-f2fe-4823-b1e2-308fe0434d85",
     "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2Fexample_vibe.mp4?alt=media&token=ec66483e-7823-4cfb-b3b4-f2c846e9ae23",
+    "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2FIMG_4928.mp4?alt=media&token=030a9126-21cc-4072-b70a-0431eab55b68",
   ];
 
   useEffect(() => {
-    const selectedSource = sources[Math.round(Math.random() * (sources.length - 1))];
+    const selectedSource =
+      sources[Math.round(Math.random() * (sources.length - 1))];
 
     setSource(selectedSource);
   }, []);
