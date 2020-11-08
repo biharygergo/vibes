@@ -45,7 +45,6 @@ const EmojiSelector = styled.div`
     rgba(38, 36, 63, 1) 0%,
     rgba(0, 212, 255, 0) 100%
   );
-  opacity: 0.6;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -130,7 +129,7 @@ export const ViewVibePage = () => {
   ];
 
   useEffect(() => {
-    const selectedSource = sources[Math.round(Math.random() * sources.length)];
+    const selectedSource = sources[Math.round(Math.random() * (sources.length - 1))];
 
     setSource(selectedSource);
   }, []);

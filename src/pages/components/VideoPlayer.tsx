@@ -20,19 +20,15 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
 
   useEffect(() => {
     if (!player && videoNode && videoNode.current) {
-      console.log("creating player");
       const _player = videojs(
         videoNode.current,
         { ...props },
-        function onPlayerReady() {
-          console.log("onPlayerReady");
-        }
+        function onPlayerReady() {}
       );
 
       _player.on("ended", props.onFinished);
 
       _player.on("loadedmetadata", (_event) => {
-        console.log(_player.duration());
         props.onDurationLoaded(_player.duration());
       });
 
@@ -46,7 +42,7 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
         // player.dispose();
       }
     };
-  }, []);
+  }, [videoNode, player]);
 
   return (
     <div data-vjs-player>
