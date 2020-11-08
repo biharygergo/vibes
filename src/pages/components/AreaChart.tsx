@@ -32,7 +32,6 @@ export default function GradientAreaChart<T>(props: AreaChartProps<T>) {
             <stop offset="100%" stopColor={props.strokeColor} stopOpacity={0} />
           </linearGradient>
         </defs>
-        <Tooltip />
         {props.labelKey && (
           <XAxis
             dataKey={props.labelKey.toString()}

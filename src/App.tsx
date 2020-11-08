@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     @media only screen and (min-width: 768px) {
       #root {
         width: 375px;
-        height: 715px;
+        height: 90vh;
         max-height: 800px;
         min-width: 400px;
         border: 2px solid #d3d3d3;
@@ -50,10 +50,12 @@ const GlobalStyle = createGlobalStyle`
 const ResponsiveDisclaimer = styled.h6`
   color: ${(props) => props.theme.lightText};
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   left: 10px;
   right: 10px;
   text-align: center;
+  margin: 0;
+  margin-bottom: 5px;
   @media only screen and (max-width: 768px) {
     display: none;
   }
