@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# The Vibe Project
+
+## Deployed version
+Check out the deployed prototype [here](https://getthevibe.today). It's best to use a mobile to test, we didn't really design for desktop.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
