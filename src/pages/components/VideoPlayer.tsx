@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import videojs, { VideoJsPlayer } from "video.js";
 
@@ -45,7 +46,7 @@ export const VideoPlayer = (props: VideoPlayerProps) => {
         // player.dispose();
       }
     };
-  }, [props, player]);
+  }, []);
 
   return (
     <div data-vjs-player>

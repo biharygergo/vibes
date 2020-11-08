@@ -123,15 +123,23 @@ export const ViewVibePage = () => {
   const [duration, setDuration] = useState<number | null>(null);
   const [playing, setPlaying] = useState<boolean>(false);
   const history = useHistory();
+
+  const sources = [
+    "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2FVID_20201108_010105.mp4?alt=media&token=1f83360c-f2fe-4823-b1e2-308fe0434d85",
+    "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2Fexample_vibe.mp4?alt=media&token=ec66483e-7823-4cfb-b3b4-f2c846e9ae23",
+  ];
+
   useEffect(() => {
-    setSource("/assets/example_vibe.mp4");
+    const selectedSource = sources[Math.round(Math.random() * sources.length)];
+
+    setSource(selectedSource);
   }, []);
 
   const onFinished = () => {
     history.push("/share");
   };
 
-  console.log('Duration', duration)
+  console.log("Duration", duration);
 
   return (
     <>
