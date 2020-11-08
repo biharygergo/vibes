@@ -5,7 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import {
   FeelingNowPage,
   LoadChartPage,
@@ -25,6 +25,35 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     height: 100%;
     overflow: hidden;
+  }
+
+
+    @media only screen and (min-width: 768px) {
+      #root {
+        width: 400px;
+        height: 800px;
+        border: 2px solid #d3d3d3;
+        border-radius: 30px;
+        padding: 10px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        margin-top: 30px;
+        box-shadow: ${theme.boxShadow};
+      }
+    }
+  
+`;
+
+const ResponsiveDisclaimer = styled.h6`
+  color: ${(props) => props.theme.lightText};
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  text-align: center;
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -67,6 +96,9 @@ function App() {
             </Route>
           </Switch>
         </Router>
+        <ResponsiveDisclaimer>
+          Maybe you should open this from your phone instead...
+        </ResponsiveDisclaimer>
       </ThemeProvider>
     </div>
   );

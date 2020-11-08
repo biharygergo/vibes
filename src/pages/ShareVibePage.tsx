@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import {
@@ -69,8 +69,14 @@ const DescriptionText = styled.p`
 
 export const ShareVibePage = () => {
   const history = useHistory();
+  const [offset, setOffset] = useState<number>(0);
 
-  const offsetX = window.innerWidth / 2 - 200;
+  useEffect(() => {
+    const offsetBase =
+      window.outerWidth > 768 ? 0 : window.outerWidth / 2 - 200;
+
+    setOffset(offsetBase);
+  }, []);
 
   return (
     <PageLayout>
@@ -84,7 +90,7 @@ export const ShareVibePage = () => {
           </PictureDiv>
           <FloatingEmoji
             size={2}
-            offsetX={offsetX + 50}
+            offsetX={offset + 50}
             offsetY={50}
             random={Math.random()}
           >
@@ -92,7 +98,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={3}
-            offsetX={offsetX + 270}
+            offsetX={offset + 270}
             offsetY={80}
             random={Math.random()}
           >
@@ -100,7 +106,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={1}
-            offsetX={offsetX + 70}
+            offsetX={offset + 70}
             offsetY={200}
             random={Math.random()}
           >
@@ -108,7 +114,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={2}
-            offsetX={offsetX + 300}
+            offsetX={offset + 300}
             offsetY={150}
             random={Math.random()}
           >
@@ -116,7 +122,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
           <FloatingEmoji
             size={3}
-            offsetX={offsetX + 40}
+            offsetX={offset + 40}
             offsetY={220}
             random={Math.random()}
           >

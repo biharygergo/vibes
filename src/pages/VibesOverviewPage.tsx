@@ -75,7 +75,10 @@ export const VibesOverviewPage = () => {
           <WordCloudWrapper>
             <ReactWordcloud
               words={generateEmojis()}
-              size={[window.innerWidth, window.innerHeight * 0.5]}
+              size={[
+                window.innerWidth > 768 ? 400 : window.innerWidth,
+                window.innerHeight * 0.5,
+              ]}
             />
           </WordCloudWrapper>
         </NoOverflowDiv>

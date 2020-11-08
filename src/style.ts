@@ -54,6 +54,7 @@ export const Button = styled.button`
   padding: 1rem 4rem;
   width: 100%;
   border-radius: 8px;
+  cursor: pointer;
 
   &:focus {
     outline: none;
