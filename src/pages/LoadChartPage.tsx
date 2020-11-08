@@ -93,7 +93,7 @@ export const LoadChartPage = () => {
   useEffect(() => {
     setTimeout(() => {
       history.push("/received");
-    }, 10000);
+    }, 5000);
   }, [history]);
   return (
     <PageLayout>
