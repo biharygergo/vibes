@@ -188,6 +188,16 @@ const Actions = ({
   );
 };
 
+const UnsupportedView = (props: { onSend: () => void }) => (
+  <div style={{ padding: 10 }}>
+    <p style={{ margin: 15 }}>
+      This browser is uncapable of recording video. Please try in Chrome
+      instead or give permissions.
+    </p>
+    <Button onClick={props.onSend}>Skip Recording</Button>{" "}
+  </div>
+);
+
 export const RecordVibePage = () => {
   const history = useHistory();
   const onSend = () => {
@@ -201,6 +211,7 @@ export const RecordVibePage = () => {
           console.log("videoBlob", videoBlob);
         }}
         renderActions={(props: any) => <Actions {...{ ...props, onSend }} />}
+        renderUnsupportedView={() => <UnsupportedView onSend={onSend} />}
       />
     </FullScreenRecorder>
   );

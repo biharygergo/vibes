@@ -1,0 +1,60 @@
+[debug] [2020-11-08T03:13:53.099Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T03:13:53.101Z] Command:       /Users/gergelybihary/.nvm/versions/node/v12.14.0/bin/node /Users/gergelybihary/.nvm/versions/node/v12.14.0/bin/firebase deploy
+[debug] [2020-11-08T03:13:53.101Z] CLI Version:   7.14.0
+[debug] [2020-11-08T03:13:53.101Z] Platform:      darwin
+[debug] [2020-11-08T03:13:53.101Z] Node Version:  v12.14.0
+[debug] [2020-11-08T03:13:53.101Z] Time:          Sun Nov 08 2020 04:13:53 GMT+0100 (Central European Standard Time)
+[debug] [2020-11-08T03:13:53.101Z] ----------------------------------------------------------------------
+[debug] [2020-11-08T03:13:53.101Z] 
+[debug] [2020-11-08T03:13:53.110Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-11-08T03:13:53.111Z] > authorizing via signed-in user
+[debug] [2020-11-08T03:13:53.111Z] [iam] checking project junction-vibes for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-11-08T03:13:53.113Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/junction-vibes:testIamPermissions  
+
+[debug] [2020-11-08T03:13:53.622Z] <<< HTTP RESPONSE 200
+[debug] [2020-11-08T03:13:53.625Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/junction-vibes  
+ 
+[debug] [2020-11-08T03:13:54.168Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'junction-vibes'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-11-08T03:13:54.170Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/junction-vibes/versions  
+
+[debug] [2020-11-08T03:13:55.176Z] <<< HTTP RESPONSE 200
+[info] i  hosting[junction-vibes]: beginning deploy...
+[info] i  hosting[junction-vibes]: found 18 files in build
+[debug] [2020-11-08T03:13:56.129Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2020-11-08T03:13:56.129Z] [hosting][hash queue][FINAL]
+[debug] [2020-11-08T03:13:56.129Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/junction-vibes/versions/ae51d3ec993053b6:populateFiles  
+ <request body omitted>
+[debug] [2020-11-08T03:13:57.086Z] <<< HTTP RESPONSE 200
+[debug] [2020-11-08T03:13:57.089Z] [hosting][populate queue][FINAL]
+[debug] [2020-11-08T03:13:57.089Z] [hosting] uploads queued: 4
+[debug] [2020-11-08T03:13:59.103Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[junction-vibes]: file upload complete
+[debug] [2020-11-08T03:13:59.104Z] [hosting] deploy completed after 3927ms
+[debug] [2020-11-08T03:13:59.104Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "junction-vibes"
+    },
+    "site": "junction-vibes",
+    "version": "sites/junction-vibes/versions/ae51d3ec993053b6"
+  }
+]
+[info] i  hosting[junction-vibes]: finalizing version...
+[debug] [2020-11-08T03:13:59.105Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/junction-vibes/versions/ae51d3ec993053b6?updateMask=status  
+
