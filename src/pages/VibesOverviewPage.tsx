@@ -2,36 +2,18 @@ import React from "react";
 import { PageLayout, Header, HeaderTitle, Content, Button } from "../style";
 import ReactWordcloud from "react-wordcloud";
 import { emojiLookup } from "./FeelingNowPage";
-import styled from "styled-components";
-
-const words = [
-  {
-    text: emojiLookup.Awesome.emoji,
-    value: 64,
-  },
-  {
-    text: emojiLookup.Anxious.emoji,
-    value: 11,
-  },
-  {
-    text: emojiLookup.Breakdown.emoji,
-    value: 16,
-  },
-  {
-    text: emojiLookup.FeelTheLove.emoji,
-    value: 17,
-  },
-];
+import styled, { keyframes } from "styled-components";
 
 const generateEmojis = () => {
-  const maxEmojiCount = 500;
+  const maxEmojiCount = 40;
   const emojis = [];
   const possibleEmojis = Object.values(emojiLookup).map((item) => item.emoji);
 
   while (emojis.length < maxEmojiCount) {
     emojis.push({
       value: Math.floor(Math.random() * 200),
-      text: possibleEmojis[Math.floor(Math.random() * possibleEmojis.length)],
+      text:
+        possibleEmojis[Math.floor(Math.random() * possibleEmojis.length - 1)],
     });
   }
 
@@ -83,7 +65,10 @@ export const VibesOverviewPage = () => {
     <PageLayout>
       <Content>
         <VibeText>
-          <HeaderTitle>Current vibes <br />at</HeaderTitle>
+          <HeaderTitle>
+            Current vibes <br />
+            at
+          </HeaderTitle>
           <AaltoLogo src="/assets/aalto.png" />
         </VibeText>
         <NoOverflowDiv>
