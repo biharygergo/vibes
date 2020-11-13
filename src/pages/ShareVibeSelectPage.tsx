@@ -19,9 +19,10 @@ const emojisToShow = [
 ];
 
 const DescriptionText = styled.p`
-  color: ${(props) => props.theme.lightText};
+  color: ${(props) => props.theme.color};
   text-align: center;
   margin-bottom: 3rem;
+  margin-top: 2rem;
 `;
 
 export const ShareVibeSelectPage = () => {

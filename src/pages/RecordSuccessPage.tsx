@@ -23,7 +23,7 @@ const PlaneEmoji = styled.span`
 `;
 
 const DescriptionText = styled.p`
-  color: ${(props) => props.theme.lightText};
+  color: ${(props) => props.theme.text};
   text-align: center;
   margin-bottom: 3rem;
 `;

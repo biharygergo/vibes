@@ -66,6 +66,7 @@ const ReactionEmoji = styled.span<{ offsetY: number }>`
   margin-bottom: ${(props) => props.offsetY}px;
   font-size: 3rem;
   text-shadow: ${(props) => props.theme.emojiShadow};
+  cursor: pointer;
 `;
 
 const ConfettiPseudo = styled.div`
@@ -123,11 +124,16 @@ export const ViewVibePage = () => {
   const [playing, setPlaying] = useState<boolean>(false);
   const history = useHistory();
 
-  const sources = [
+  const remote_sources = [
     "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2FVID_20201108_010105.mp4?alt=media&token=1f83360c-f2fe-4823-b1e2-308fe0434d85",
     "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2Fexample_vibe.mp4?alt=media&token=ec66483e-7823-4cfb-b3b4-f2c846e9ae23",
     "https://firebasestorage.googleapis.com/v0/b/junction-vibes.appspot.com/o/vibes%2FIMG_4928.mp4?alt=media&token=030a9126-21cc-4072-b70a-0431eab55b68",
   ];
+
+  const local_sources = ["/local-assets/greg.mp4", "/local-assets/peter.mp4"];
+
+  const sources =
+    process.env.NODE_ENV === "production" ? remote_sources : local_sources;
 
   useEffect(() => {
     const selectedSource =

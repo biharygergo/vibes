@@ -62,7 +62,7 @@ const FloatingEmoji = styled.span<{
 `;
 
 const DescriptionText = styled.p`
-  color: ${(props) => props.theme.lightText};
+  color: ${(props) => props.theme.color};
   text-align: center;
   margin-bottom: 3rem;
 `;
@@ -130,7 +130,8 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
         </PictureWrapper>
         <DescriptionText>
-          Your colleague Peter is feeling anxious and has 5 calendar events today.
+          Your colleague Peter is feeling anxious and has{" "}
+          <strong>5 calendar events</strong> today.
         </DescriptionText>
       </Content>
       <Footer>

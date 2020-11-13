@@ -53,7 +53,7 @@ const Emoji = styled.span`
 const DetailsBlock = styled.div`
   text-align: center;
   padding: 2rem 0;
-  color: ${(props) => props.theme.lightText};
+  color: ${(props) => props.theme.text};
 `;
 
 const Button = styled.button`
@@ -156,7 +156,7 @@ export const FeelingNowPage = () => {
         />
 
         <DetailsBlock>
-          We noticed 5 meetings on your calendar today.
+          We noticed <strong>5 meetings </strong>on your calendar today.
         </DetailsBlock>
       </Content>
       <Footer>

@@ -171,7 +171,7 @@ const Actions = ({
     <div>
       {isCameraOn && streamIsReady && !isRecording && !isReplayingVideo && (
         <RecordHelpTextWrapper>
-          <RecordHelpText>Peter likes football, maybe you have this in common?</RecordHelpText>
+          <RecordHelpText>Peter likes football ⚽️ maybe you have this in common?</RecordHelpText>
         </RecordHelpTextWrapper>
       )}
       {isRecording && <Timer timeLimit={timeLimit} defaultText="0:00" />}
@@ -205,6 +205,7 @@ export const RecordVibePage = () => {
         }}
         renderActions={(props: any) => <Actions {...{ ...props, onSend }} />}
         renderUnsupportedView={() => <UnsupportedView onSend={onSend} />}
+        timeLimit={10000}
       />
     </FullScreenRecorder>
   );
