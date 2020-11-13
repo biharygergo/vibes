@@ -130,7 +130,7 @@ export const ShareVibePage = () => {
           </FloatingEmoji>
         </PictureWrapper>
         <DescriptionText>
-          Your classmate Peter is feeling anxious and has 3 deadlines this week.
+          Your colleague Peter is feeling anxious and has 5 calendar events today.
         </DescriptionText>
       </Content>
       <Footer>

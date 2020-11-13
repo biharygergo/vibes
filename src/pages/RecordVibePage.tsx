@@ -107,13 +107,6 @@ const Actions = ({
     if (isReplayingVideo) {
       return (
         <div>
-          {/* <OverlayButton
-            type="button"
-            onClick={onStopReplaying}
-            data-qa="start-replaying"
-          >
-            Re-record
-          </OverlayButton> */}
           <Button type="button" onClick={onSend} style={{ width: "300px" }}>
             Send Vibe
           </Button>
@@ -178,7 +171,7 @@ const Actions = ({
     <div>
       {isCameraOn && streamIsReady && !isRecording && !isReplayingVideo && (
         <RecordHelpTextWrapper>
-          <RecordHelpText>How do you relax after studying?</RecordHelpText>
+          <RecordHelpText>Peter likes football, maybe you have this in common?</RecordHelpText>
         </RecordHelpTextWrapper>
       )}
       {isRecording && <Timer timeLimit={timeLimit} defaultText="0:00" />}

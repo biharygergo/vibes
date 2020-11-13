@@ -38,7 +38,7 @@ export const ShareVibeSelectPage = () => {
       <Content>
         <EmojiSelector emojis={emojisToShow} onSelected={() => {}} />
         <DescriptionText>
-          Select the perfect Vibe to cheer up Peter!
+          Select the perfect Vibe to cheer Peter up!
         </DescriptionText>
       </Content>
       <Footer>

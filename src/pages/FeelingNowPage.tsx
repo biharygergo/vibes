@@ -156,7 +156,7 @@ export const FeelingNowPage = () => {
         />
 
         <DetailsBlock>
-          We noticed 2 upcoming deadlines for your courses.
+          We noticed 5 meetings on your calendar today.
         </DetailsBlock>
       </Content>
       <Footer>

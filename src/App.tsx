@@ -34,8 +34,8 @@ const GlobalStyle = createGlobalStyle`
         height: 90vh;
         max-height: 800px;
         min-width: 400px;
-        border: 2px solid #d3d3d3;
-        border-radius: 30px;
+        border: 10px solid black;
+        border-radius: 40px;
         padding: 10px;
         margin: 0 auto;
         position: relative;

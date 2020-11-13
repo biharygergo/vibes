@@ -31,7 +31,7 @@ const DescriptionText = styled.p`
 export const RecordSuccessPage = () => {
   const history = useHistory();
   const onNext = () => {
-    history.push("/all");
+    history.push("/now");
   };
 
   return (
@@ -41,7 +41,7 @@ export const RecordSuccessPage = () => {
       </Header>
       <Content>
         <PlaneWrapper>
-          <PlaneEmoji>✈️</PlaneEmoji>
+          <PlaneEmoji>🏆</PlaneEmoji>
         </PlaneWrapper>
         <DescriptionText>Your Vibe is on its way to Peter.</DescriptionText>
       </Content>
